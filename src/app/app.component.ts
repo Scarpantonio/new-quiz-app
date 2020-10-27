@@ -1,36 +1,44 @@
-import { Component } from '@angular/core';
-import { QuestionsService } from './questions.service';
-import { Quiz, Answers, Choice } from './quiz.model';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  template: "<router-outlet></router-outlet>"
 })
-export class AppComponent {
-  answers: Answers;
-  quiz: Quiz;
-  currentQuestionIndex: number;
-  private showResults = false;
-  // this is a comment
-  constructor(private questionsService: QuestionsService) {
-    this.questionsService.getJSON('maths').subscribe(data => {
-      this.quiz = new Quiz('maths', data);
-      this.answers = new Answers();
-      this.currentQuestionIndex = 0;
-    });
-  }
+export class AppComponent {}
 
-  updateChoice(choice: Choice) {
-    this.answers.values[this.currentQuestionIndex] = choice;
-  }
+// import { Component } from '@angular/core';
+// import { QuestionsService } from './questions.service';
+// import { Quiz, Answers, Choice } from './quiz.model';
 
-  nextOrViewResults() {
-    if (this.currentQuestionIndex === this.quiz.questions.length - 1) {
-      this.showResults = true;
-      return;
-    }
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.scss']
+// })
+// export class AppComponent {
+//   answers: Answers;
+//   quiz: Quiz;
+//   currentQuestionIndex: number;
+//   private showResults = false;
+//   // this is a comment
+//   constructor(private questionsService: QuestionsService) {
+//     this.questionsService.getJSON('maths').subscribe(data => {
+//       this.quiz = new Quiz('maths', data);
+//       this.answers = new Answers();
+//       this.currentQuestionIndex = 0;
+//     });
+//   }
 
-    this.currentQuestionIndex++;
-  }
-}
+//   updateChoice(choice: Choice) {
+//     this.answers.values[this.currentQuestionIndex] = choice;
+//   }
+
+//   nextOrViewResults() {
+//     if (this.currentQuestionIndex === this.quiz.questions.length - 1) {
+//       this.showResults = true;
+//       return;
+//     }
+
+//     this.currentQuestionIndex++;
+//   }
+// }
