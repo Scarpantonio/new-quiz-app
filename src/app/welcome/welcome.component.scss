@@ -1,0 +1,38 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  font-size: 50px;
+  margin-top: 200px;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: Helvetica;
+  border-radius: 40px;
+  background-color: white;
+}
+
+.selector {
+  font-family: Helvetica;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  text-align: center;
+  background-color: blue;
+}
+
+li {
+  border: non;
+}
+// .container {
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// border:none;
+// }

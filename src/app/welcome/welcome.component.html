@@ -1,0 +1,22 @@
+<h1 class="text-center title">
+  QUIZZES //APP
+</h1>
+<div class="container vertical-center">
+  <div class="selector">
+    <h3>Quiz:</h3>
+
+    <li>
+      <ul class="selection" *ngFor="let a of quiz">
+        {{
+          a.name
+        }}
+        :
+        <a routerLink="/{{ a.name }}" class="btn btn-primary"
+          >Choose the {{ a.name }} quiz</a
+        >
+      </ul>
+    </li>
+  </div>
+</div>
+
+<app-footer></app-footer>
